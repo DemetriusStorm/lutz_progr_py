@@ -22,11 +22,11 @@ class Person:
         self.pay *= (1.0 + percent)
 
     def __str__(self):
-        return ('%s %s %s %s %s' %
-                self.__class__.__name__, self.name, self.pay, self.age, self.job)
+        #return ('%s %s %s %s %s' %
+        #        self.__class__.__name__, self.name, self.pay, self.age, self.job)
 
-        #return ('<{} => {}: {}, {}>'.format(
-        #        self.__class__.__name__, self.name, self.pay, self.job))
+        return ('<{} => {}: {}, {}>'.format(
+                self.__class__.__name__, self.name, self.pay, self.job))
 
 
 class Manager(Person):
@@ -46,7 +46,7 @@ if __name__ == '__main__':
     sue = Person('Sue Jones', 47, 40000, 'hardware')
     tom = Manager(name='Tom Doe', age=50, pay=50000)
 
-    #print(sue, sue.pay, sue.lastName())
+    print(sue, sue.pay, sue.lastName())
 
     for obj in (bob, sue, tom):
         obj.giveRaise(.10)  # вызовет метод giveRaise объекта obj

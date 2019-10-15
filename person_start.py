@@ -11,7 +11,8 @@ if __name__ == '__main__':
     sue = Person('Sue Jones', 45, 40000, 'hardware')
     tom = Person('Tom Breader', 36, 25000, 'anykey')
 
-    print(bob.name.split()[-1])
+    print(bob.name)
+    print(str(bob.name).split()[-1])
 
     sue.pay *= 1.10
     print(sue.name, '-', sue.pay)

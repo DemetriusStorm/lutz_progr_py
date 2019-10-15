@@ -13,3 +13,7 @@ for obj in db:
 
 for obj in db:
     print(obj.lastName(), '=>', obj.pay)
+
+
+tom = Manager('Tom Jones', 50)
+print(tom)

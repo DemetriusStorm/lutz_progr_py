@@ -12,7 +12,7 @@ class MyGui(Frame):
         showinfo(title='popup', message='Button pressed!')
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     window = MyGui()
     window.pack()
     window.mainloop()

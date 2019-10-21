@@ -56,7 +56,7 @@ def update_record():
         record = Person(name='?', age='?')  # eval: string must be in " "
 
     for field in fieldname:
-        setattr(record, field, eval(entries[field]).get())
+        setattr(record, field, entries[field].get())
     db[key] = record
 
 

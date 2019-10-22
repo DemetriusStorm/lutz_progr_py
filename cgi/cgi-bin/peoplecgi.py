@@ -68,20 +68,34 @@ def fetch_record(db, form):
 
 
 def update_record(db, form):
+    if 'key' not in form:
+        fields = dict.fromkeys(field_names, '?')
+        fields['key'] = 'Missing key input!'
+    else:
+        key = form['key'].value
+        if key in db:
+            record = db[key]                    # изменить сществующую запись
+        else:
+            from person import Person           # создать/сохранить новую
+            record = Person(name='?', age='?')
+
+        for field in field_names:
+            setattr(record, field, form[field].value)
+        db[key] = record
+        fields = record.__dict__
+        fields['key'] = key
+    return fields
 
 
+db = shelve.open(shelve_name)
+action = form['action'].value if 'action' in form else None
+if action == 'Fetch':
+    fields = fetch_record(db, form)
+elif action == 'Update':
+    fields = update_record(db, form)
+else:
+    fields = dict.fromkeys(field_names, '?')     # недопустимое значение
+    fields['key'] = 'Missing or invalid action'  # кнопки отправки формы
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+db.close()
+print(reply_html % html_size(fields))            # заполнить форму ответа из словаря

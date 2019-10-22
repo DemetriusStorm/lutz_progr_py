@@ -75,7 +75,7 @@ def update_record(db, form):
     else:
         key = form['key'].value
         if key in db:
-            record = db[key]                    # изменить сществующую запись
+            record = db[key]                    # изменить существующую запись
         else:
             from person import Person           # создать/сохранить новую
             record = Person(name='?', age='?')

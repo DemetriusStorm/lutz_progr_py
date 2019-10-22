@@ -56,7 +56,11 @@ def update_record():
         record = Person(name='?', age='?')  # eval: string must be in " "
 
     for field in fieldname:
+<<<<<<< HEAD:tkinter/peoplegui.py
+        setattr(record, field, eval(entries[field].get()))
+=======
         setattr(record, field, entries[field].get())
+>>>>>>> ec21c928ca71e6b0b04c44e2bd6e92bf06ae36fb:tkinter/Linux/peoplegui.py
     db[key] = record
 
 

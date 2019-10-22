@@ -1,4 +1,4 @@
-#!C:\Programs\Python\Python37\
+#!/usr/bin/python
 
 import cgi
 import html

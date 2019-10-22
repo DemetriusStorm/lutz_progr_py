@@ -25,7 +25,7 @@ def on_grow():
     global font_size
     font_size += 5
     mainLabel.config(font=('arial', font_size, 'italic'))
-    main.after(100, on_grow)
+    main.after(500, on_grow)
 
 
 main = Tk()

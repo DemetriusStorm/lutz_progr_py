@@ -4,9 +4,10 @@
 
 
 def more(text, num_lines=15):
-    lines = text.splitlines()  # подобно split('\n') но без '' в конце
-    print(lines)
+    lines = text.splitlines()               # подобно split('\n') но без '' в конце
     # lines = text.split('\n')
+    print(lines)
+
     while lines:
         chunk = lines[:num_lines]
         lines = lines[num_lines:]
@@ -16,8 +17,8 @@ def more(text, num_lines=15):
             break
 
 
-if __name__ == '__main__':  # если запускается как сценарий
-    import sys  # отобразить построчное содержимое
+if __name__ == '__main__':                  # если запускается как сценарий
+    import sys                              # отобразить построчное содержимое
     more(open(sys.argv[1]).read(), 10)      # файла, указанного в командной строке
 
     # more(

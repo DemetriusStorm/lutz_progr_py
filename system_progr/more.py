@@ -5,9 +5,6 @@
 
 def more(text, num_lines=15):
     lines = text.splitlines()               # подобно split('\n') но без '' в конце
-    # lines = text.split('\n')
-    print(lines)
-
     while lines:
         chunk = lines[:num_lines]
         lines = lines[num_lines:]
@@ -19,7 +16,7 @@ def more(text, num_lines=15):
 
 if __name__ == '__main__':                  # если запускается как сценарий
     import sys                              # отобразить построчное содержимое
-    more(open(sys.argv[1]).read(), 10)      # файла, указанного в командной строке
+    more(open(sys.argv[1]).read(), 45)      # файла, указанного в командной строке
 
     # more(
     #     'Функция help, с которой мы только что познакомились, также не обладает достаточной гибкостью \n'

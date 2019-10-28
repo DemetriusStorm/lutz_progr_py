@@ -20,12 +20,12 @@ def getreply():
     if sys.stdin.isatty():  # если stdin связан с консолью, читать ответ из stdin
         return input('Type \'y\' or \'Y\' to continue, or other to exit>>')
     else:
-        if sys.platform[:3] == 'win':
-            import msvcrt
-            msvcrt.putch(b'?')
-            key = msvcrt.getche()
-            msvcrt.putch(b'\n')
-            return key
+        if sys.platform[:3] == 'win':   # если stdin был перенаправлен,
+            import msvcrt               # его нельзя использовать для чтения
+            msvcrt.putch(b'?')          # ответа пользователя
+            key = msvcrt.getche()       # использовать иснтрумент консоли
+            msvcrt.putch(b'\n')         # getche(), которая не выводит символ
+            return key                  # для нажатия клавиши
         else:
             assert False, 'Platform not supported'
             # For LINUX: open('/dev/tty').readline()[:-1]
@@ -48,8 +48,8 @@ def more(text, numlines=10):
             break
 
 
-if __name__ == '__main__':
-    if len(sys.argv) == 1:
-        more(sys.stdin.read())
+if __name__ == '__main__':              # если выполняется, а не импортируется
+    if len(sys.argv) == 1:              # если нет аргументов командной строки
+        more(sys.stdin.read())          # вывести содержиме stdin
     else:
-        more(open(sys.argv[1]).read())
+        more(open(sys.argv[1]).read())  # иначе вывести содержимое файла

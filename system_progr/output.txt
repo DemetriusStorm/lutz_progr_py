@@ -1,0 +1,9 @@
+Hello stream world
+Enter a number>> 6 squared is 36
+Enter a number>> 8 squared is 64
+Enter a number>> 12 squared is 144
+Enter a number>> 32 squared is 1024
+Enter a number>> 9 squared is 81
+Enter a number>> 1 squared is 1
+Enter a number>> 6 squared is 36
+Enter a number>> Bye

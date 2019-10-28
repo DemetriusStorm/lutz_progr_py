@@ -31,17 +31,17 @@ def getreply():
             # For LINUX: open('/dev/tty').readline()[:-1]
 
 
-def more(text, numlines=10):
+def more(text, num_lines=10):
     """
     реализует постраничный вывод содержимого строки в stdout
     :param text:
-    :param numlines:
+    :param num_lines:
     :return:
     """
     lines = text.splitlines()
     while lines:
-        chunk = lines[:numlines]
-        lines = lines[numlines:]
+        chunk = lines[:num_lines]
+        lines = lines[num_lines:]
         for line in chunk:
             print(line)
         if lines and getreply() not in [b'y', 'Y']:

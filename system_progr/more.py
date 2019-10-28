@@ -3,7 +3,7 @@
 """
 
 
-def more(text, num_lines=15):
+def more(text, num_lines=40):
     lines = text.splitlines()               # подобно split('\n') но без '' в конце
     while lines:
         chunk = lines[:num_lines]

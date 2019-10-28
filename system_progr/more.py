@@ -16,4 +16,8 @@ def more(text, num_lines=15):
 
 if __name__ == '__main__':                  # если запускается как сценарий
     import sys                              # отобразить построчное содержимое
-    more(open(sys.argv[1]).read(), 5)      # файла, указанного в командной строке
+    # more(open(sys.argv[1]).read(), 5)      # файла, указанного в командной строке
+    if len(sys.argv) == 1:                  # вывести данные из stdin, если нет аргументов
+        more(sys.stdin.read())
+    else:
+        more(open(sys.argv[1]).read())

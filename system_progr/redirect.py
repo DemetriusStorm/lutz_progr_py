@@ -42,7 +42,7 @@ class Input:                            # имитирует ВХОДНОЙ фа
 
 def redirect(function, pargs, kargs, input):    # перенаправляет stdin/out
     save_streams = sys.stdin, sys.stdout        # вызывает объект функции
-    sys.stdin - Input(input)                    # возвращает текст в stdout
+    sys.stdin = Input(input)                    # возвращает текст в stdout
     sys.stdout = Output()
     try:
         result = function(*pargs, **kargs)      # вызвать функцию с аргументами
